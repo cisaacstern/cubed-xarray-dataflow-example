@@ -38,7 +38,8 @@ jobs:
     - name: Install deploy-time dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install apache-beam[gcp] "cubed==0.6.0" "git+https://github.com/TomNicholas/xarray@array_API_astype"
+        python -m pip install -r worker-requirements.txt
+        python -m pip install apache-beam[gcp] "git+https://github.com/TomNicholas/xarray@array_API_astype"
         python -m pip install --no-deps "git+https://github.com/xarray-contrib/cubed-xarray"
     - name: 'Run Dataflow Integration Test'
       run: |
