@@ -18,12 +18,12 @@ spec = cubed.Spec(work_dir=work_dir, max_mem=2_000_000_000)
 
 U = xr.DataArray(
     name='U',
-    data=cubed.random.random((5, 1, 987, 1920), chunks=(1, 1, -1, -1), spec=spec),
+    data=cubed.random.random((5000, 1, 987, 1920), chunks=(10, 1, -1, -1), spec=spec),
     dims=["time", "face", "j", "i"],
 )
 V = xr.DataArray(
     name='V',
-    data=cubed.random.random((5, 1, 987, 1920), chunks=(1, 1, -1, -1), spec=spec),
+    data=cubed.random.random((5000, 1, 987, 1920), chunks=(10, 1, -1, -1), spec=spec),
     dims=["time", "face", "j", "i"], 
 )
 dx = xr.DataArray(
